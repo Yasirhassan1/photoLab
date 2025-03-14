@@ -32,12 +32,12 @@ function App() {
              <div className="flex justify-center items-center h-screen">
              <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
            </div>:
-            <main className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 p-4 [grid-auto-rows]">
+            <main className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 p-4 [grid-auto-rows] pt-[80px]">
              
                 {searchImg && searchData?.results ? (
                     searchData.results.length > 0 ? (
                         searchData.results.map((image) => (
-                            <Card key={image.id} imgurl={image.urls.regular} alt={image.alt_description} />
+                            <Card key={image.id} imgurl={image.urls.regular} alt={image.alt_description} download = {image.links.download+"&force=true"} likes = {image.likes}/>
                         ))
                     ) : (
                         <p className="text-white col-span-3">No results found.</p>
@@ -45,7 +45,7 @@ function App() {
                 ) : (
                     images.length > 0 ? (
                         images.map((image) => (
-                            <Card key={image.id} imgurl={image.urls.regular} alt={image.alt_description} />
+                            <Card key={image.id} imgurl={image.urls.regular} alt={image.alt_description} download = {image.links.download+"&force=true"} likes = {image.likes}/>
                         ))
                     ) : (
                         <p className="text-white col-span-3">Loading images...</p>

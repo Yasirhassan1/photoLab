@@ -24,11 +24,11 @@ export default function Header(){
               .catch((error) => console.log(error));
       }, [imagesRequest]);
     return(
-        <header className="bg-gray-800 h-[70px] text-white px-6 flex items-center">
+        <header className="bg-gray-800 h-[70px] text-white px-6 flex items-center fixed top-0 w-full z-40">
         <nav className="w-full flex items-center justify-between">
           {/* Logo */}
           
-            <strong className="text-lg">PhotoLab</strong>
+            <strong className="text-lg hidden md:block">PhotoLab</strong>
       
           {/* Search Bar */}
           <form action={submit} className="flex-1 relative mx-8 max-w-lg">
@@ -42,7 +42,7 @@ export default function Header(){
             </form>
       
           {/* Additional Icons or Links (Optional) */}
-          <div className="flex items-center gap-4">
+          <div className="items-center gap-4 hidden md:flex">
             <button className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full text-white">Login</button>
           </div>
         </nav>
